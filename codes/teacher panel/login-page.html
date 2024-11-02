@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTasker - Sign In</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #4CAF50, #81C784);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 400px; /* Adjusted max-width for better appearance */
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      font-size: 2em; /* Increased font size for better visibility */
+      color: #4CAF50;
+      margin-bottom: 20px;
+      font-weight: 700; /* Bolder font weight for emphasis */
+    }
+
+    .login-container input {
+      margin: 10px 0;
+      transition: all 0.3s ease;
+    }
+
+    .login-container button {
+      background-color: #4CAF50;
+      color: white;
+      margin: 15px 0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #45a049;
+    }
+
+    .login-container a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-size: 0.9em;
+      margin-top: 15px;
+    }
+
+    .login-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container shadow">
+    <h1>EduTasker</h1>
+    <input type="text" class="form-control" placeholder="Enter your username" aria-label="Username" required />
+    <input type="password" class="form-control" placeholder="Enter your password" aria-label="Password" required />
+    <button class="btn btn-success btn-block">Sign In</button>
+  </div>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

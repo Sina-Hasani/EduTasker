@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTasker Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-color: #f4f7fa;
+    }
+    header {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .nav-link {
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: #28a745;
+    }
+    .card-header {
+      background-color: #28a745;
+      color: white;
+    }
+    .card {
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .table th {
+      background-color: #e9ecef;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-success text-white p-3 shadow-sm d-flex justify-content-between align-items-center">
+    <h1 class="h4 mb-0">EduTasker</h1>
+    <a href="login-page.html" class="btn btn-outline-light btn-sm">Logout</a>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-light py-2">
+    <div class="container">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="submit_assignment.html"><i class="fas fa-paper-plane"></i> Assignments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="student-project-panel.html"><i class="fas fa-users"></i> Group Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="user-profile.html"><i class="fas fa-user-circle"></i> User Profile</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container my-4">
+    <!-- Upcoming Assignments -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h2 class="h5 mb-0">Upcoming Assignments</h2>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-striped mb-0" id="assignments-table">
+          <thead>
+            <tr>
+              <th>Assignment</th>
+              <th>Due Date</th>
+              <th>Submit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Math Homework</td>
+              <td>2024-11-10</td>
+              <td><a href="submit_assignment.html" class="btn btn-primary btn-sm">Submit</a></td>
+            </tr>
+            <tr>
+              <td>Science Project</td>
+              <td>2024-11-15</td>
+              <td><a href="submit_assignment.html" class="btn btn-primary btn-sm">Submit</a></td>
+            </tr>
+            <tr>
+              <td>History Essay</td>
+              <td>2024-11-20</td>
+              <td><a href="submit_assignment.html" class="btn btn-primary btn-sm">Submit</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Group Project Details -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="h5 mb-0">Group Project Details</h2>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-striped mb-0" id="projects-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Deadline</th>
+              <th>Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Solar System Model</td>
+              <td>2024-12-01</td>
+              <td>Group A</td>
+            </tr>
+            <tr>
+              <td>History Presentation</td>
+              <td>2024-12-05</td>
+              <td>Group B</td>
+            </tr>
+            <tr>
+              <td>Coding Challenge</td>
+              <td>2024-12-10</td>
+              <td>Group C</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- JavaScript file to fetch data -->
+  <script src="dashboard.js"></script>
+</body>
+</html>

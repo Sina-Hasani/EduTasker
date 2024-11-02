@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTasker - Create Assignment</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Base styles */
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d2ffd7;
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content h2 {
+      color: #4CAF50;
+      margin-top: 0;
+      font-size: 1.6em;
+      text-align: center;
+    }
+
+    .content input,
+    .content textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1em;
+      transition: border-color 0.3s;
+    }
+
+    .content input:focus,
+    .content textarea:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    .content button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s;
+      width: calc(50% - 5px);
+    }
+
+    .content button:hover {
+      background-color: #45a049;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content {
+        padding: 15px;
+      }
+
+      .content h2 {
+        font-size: 1.4em;
+      }
+
+      .content button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EduTasker - Instructor Panel</h1>
+    <nav>
+      <ul>
+        <li><a href="teacher_dashboard.html">Dashboard</a></li>
+        <li><a href="Instructor-project-panel.html">Group Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h2>Create Assignment</h2>
+    <input type="text" placeholder="Assignment Title" aria-label="Assignment Title" />
+    <textarea placeholder="Assignment Description" aria-label="Assignment Description"></textarea>
+    <input type="text" placeholder="Due Date" aria-label="Due Date" />
+
+    <div class="button-group">
+      <button>Save</button>
+      <button class="btn btn-secondary">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

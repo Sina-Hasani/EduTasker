@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTasker - Grade Assignment</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content h2 {
+      color: #4CAF50;
+      margin-top: 0;
+      font-size: 1.6em;
+      text-align: center;
+    }
+
+    .content label {
+      font-weight: bold;
+    }
+
+    .content input,
+    .content textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1em;
+      transition: border-color 0.3s;
+    }
+
+    .content input:focus,
+    .content textarea:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EduTasker - Instructor Panel</h1>
+    <nav>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a class="text-white" href="teacher_dashboard.html">Dashboard</a></li>
+        <li class="list-inline-item"><a class="text-white" href="Instructor-project-panel.html">Group Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h2>Grade Assignment</h2>
+    <form>
+      <div class="form-group">
+        <label for="studentName">Student Name</label>
+        <input type="text" id="studentName" class="form-control" placeholder="Enter student name" disabled />
+      </div>
+      <div class="form-group">
+        <label for="assignmentTitle">Assignment Title</label>
+        <input type="text" id="assignmentTitle" class="form-control" placeholder="Enter assignment title" disabled />
+      </div>
+      <div class="form-group">
+        <label for="submissionDate">Submission Date</label>
+        <input type="text" id="submissionDate" class="form-control" placeholder="Submission Date" disabled />
+      </div>
+      <div class="form-group">
+        <label for="githubLink">GitHub Link</label>
+        <input type="text" id="githubLink" class="form-control" placeholder="GitHub Link" disabled />
+      </div>
+      <div class="form-group">
+        <label for="grade">Grade</label>
+        <input type="text" id="grade" class="form-control" placeholder="Enter the grade" />
+      </div>
+      <div class="form-group">
+        <label for="feedback">Feedback</label>
+        <textarea id="feedback" class="form-control" placeholder="Provide feedback"></textarea>
+      </div>
+      <div class="button-group">
+        <button type="submit" class="btn btn-success">Submit Grade</button>
+        <button type="button" class="btn btn-secondary">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
