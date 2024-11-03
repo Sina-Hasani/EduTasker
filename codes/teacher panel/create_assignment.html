@@ -1,160 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduTasker - Create Assignment</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Base styles */
-    body {
-      background-color: #f9f9f9;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTasker - Create Assignment</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f7fa;
+            color: #333;
+            display: flex;
+        }
 
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #343a40;
+            color: #fff;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.8em;
-    }
+        .sidebar h2 {
+            text-align: center;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
 
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 15px;
-    }
+        .sidebar .nav-link {
+            color: #adb5bd;
+            padding: 10px 20px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
 
-    nav a:hover {
-      color: #d2ffd7;
-    }
+        .sidebar .nav-link:hover {
+            color: #ffffff;
+            background-color: #495057;
+            border-radius: 4px;
+        }
 
-    .content {
-      padding: 20px;
-      max-width: 600px;
-      margin: 30px auto;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+        .sidebar .logout-link {
+            color: #ff4d4d;
+            padding: 10px 20px;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
 
-    .content h2 {
-      color: #4CAF50;
-      margin-top: 0;
-      font-size: 1.6em;
-      text-align: center;
-    }
+        .sidebar .logout-link:hover {
+            background-color: #ffcccc;
+            border-radius: 4px;
+            text-decoration: none;
+        }
 
-    .content input,
-    .content textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      font-size: 1em;
-      transition: border-color 0.3s;
-    }
+        /* Content Area */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+        }
 
-    .content input:focus,
-    .content textarea:focus {
-      border-color: #4CAF50;
-      outline: none;
-    }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
 
-    .content button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background-color 0.3s;
-      width: calc(50% - 5px);
-    }
+        .assignment-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .content button:hover {
-      background-color: #45a049;
-    }
+        .form-group label {
+            font-weight: bold;
+            color: #495057;
+        }
 
-    .button-group {
-      display: flex;
-      gap: 10px;
-    }
+        .form-control {
+            border: 1px solid #ced4da;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
 
-    /* Responsive styles */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
-        text-align: center;
-      }
+        .form-control:focus {
+            border-color: #343a40;
+            box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.25);
+        }
 
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
+        .btn-primary {
+            background-color: #343a40;
+            border-color: #343a40;
+        }
 
-      .content {
-        padding: 15px;
-      }
+        .btn-primary:hover {
+            background-color: #495057;
+            border-color: #495057;
+        }
 
-      .content h2 {
-        font-size: 1.4em;
-      }
+        .btn-secondary {
+            margin-left: 10px;
+        }
 
-      .content button {
-        width: 100%;
-      }
-    }
-  </style>
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+        
+        .sidebar h2 a{
+            color: white;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>EduTasker - Instructor Panel</h1>
-    <nav>
-      <ul>
-        <li><a href="teacher_dashboard.html">Dashboard</a></li>
-        <li><a href="Instructor-project-panel.html">Group Projects</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="content">
-    <h2>Create Assignment</h2>
-    <input type="text" placeholder="Assignment Title" aria-label="Assignment Title" />
-    <textarea placeholder="Assignment Description" aria-label="Assignment Description"></textarea>
-    <input type="text" placeholder="Due Date" aria-label="Due Date" />
-
-    <div class="button-group">
-      <button>Save</button>
-      <button class="btn btn-secondary">Cancel</button>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div>
+          <h2><a href="teacher_dashboard.html">EduTasker</a></h2>
+          <nav class="nav flex-column">
+              <a class="nav-link" href="teacher_dashboard.html">
+                  <i class="fas fa-home"></i> Dashboard
+              </a>
+              <a class="nav-link" href="grade_assignment.html">
+                  <i class="fas fa-check-circle"></i> Grade Assignments
+              </a>
+              <a class="nav-link" href="create-project-group.html">
+                  <i class="fas fa-users"></i> Create Project Group
+              </a>
+          </nav>
+      </div>
+      <a class="logout-link" href="login-page.html">
+          <i class="fas fa-sign-out-alt"></i> Logout
+      </a>
     </div>
-  </div>
 
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Content Area -->
+    <div class="content">
+        <header>
+            <h1>Create New Assignment</h1>
+        </header>
+
+        <div class="assignment-form">
+            <form>
+                <div class="form-group">
+                    <label for="assignmentTitle">Assignment Title</label>
+                    <input type="text" class="form-control" id="assignmentTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="assignmentDescription">Assignment Description</label>
+                    <textarea class="form-control" id="assignmentDescription" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+                    <input type="datetime-local" class="form-control" id="dueDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="attachments">Attachments</label>
+                    <input type="file" class="form-control-file" id="attachments" multiple>
+                </div>
+
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Create Assignment</button>
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

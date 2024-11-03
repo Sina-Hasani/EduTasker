@@ -6,93 +6,183 @@
     <title>EduTasker Instructor Dashboard</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-color: #f9f9f9;
+            background-color: #f4f7fa;
             color: #333;
+            display: flex;
         }
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #343a40;
+            color: #fff;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .nav-link {
+            color: #adb5bd;
+            padding: 10px 20px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
+
+        .sidebar .nav-link:hover {
+            color: #ffffff;
+            background-color: #495057;
+            border-radius: 4px;
+        }
+
+        .sidebar .logout-link {
+            color: #ff4d4d;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .sidebar .logout-link:hover {
+            background-color: #ffcccc;
+            border-radius: 4px;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+        }
+
         header {
-            background-color: #4CAF50;
+            background-color: #343a40;
             color: white;
             padding: 20px;
         }
+
         .student-submissions {
             margin-bottom: 20px;
         }
+
         .actions a {
-            background-color: #4CAF50;
+            background-color: #495057;
             color: white;
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 4px;
             display: inline-block;
         }
+
         .actions a:hover {
-            background-color: #388E3C;
+            background-color: #343a40;
+        }
+
+        .student-submissions h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .content {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+
+        .sidebar h2 a{
+            color: white;
         }
     </style>
 </head>
 <body>
-    <header class="mb-4">
-        <div class="container">
-            <h1>EduTasker - Instructor Panel</h1>
-            <a href="login-page.html" class="btn btn-outline-light btn-sm">Logout</a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div>
+            <h2><a href="teacher_dashboard.html">EduTasker</a></h2>
+            <nav class="nav flex-column">
+                <a class="nav-link" href="create_assignment.html">
+                    <i class="fas fa-file-alt"></i> Create Assignment
+                </a>
+                <a class="nav-link" href="grade_assignment.html">
+                    <i class="fas fa-check-circle"></i> Grade Assignments
+                </a>
+                <a class="nav-link" href="create-project-group.html">
+                    <i class="fas fa-users"></i> Create Project Group
+                </a>
+            </nav>
         </div>
-    </header>
+        <a class="logout-link" href="login-page.html">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+    </div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">EduTasker</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="create_assignment.html">Create Assignment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="grade_assignment.html">Grade Assignments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="teacher-project-panel.html">Create Project Group</a>
-                    </li>
-                </ul>
+    <!-- Content Area -->
+    <div class="content">
+        <header class="mb-4">
+            <div class="container">
+                <h1>EduTasker - Instructor Dashboard</h1>
             </div>
-        </div>
-    </nav>
+        </header>
 
-    <div class="container">
-        <div class="student-submissions bg-white p-4 rounded shadow">
-            <h2>Student Submissions</h2>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Student Name</th>
-                        <th>Submission Date</th>
-                        <th>GitHub Link</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>John Doe</td>
-                        <td>Nov 01, 2024</td>
-                        <td><a href="#" target="_blank">View Link</a></td>
-                        <td class="actions">
-                            <a href="grade_assignment.html" class="btn btn-primary">Grade</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Jane Smith</td>
-                        <td>Nov 02, 2024</td>
-                        <td><a href="#" target="_blank">View Link</a></td>
-                        <td class="actions">
-                            <a href="grade_assignment.html" class="btn btn-primary">Grade</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="container">
+            <div class="student-submissions bg-white p-4 rounded shadow">
+                <h2>Student Submissions</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Submission Date</th>
+                            <th>GitHub Link</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Nov 01, 2024</td>
+                            <td><a href="#" target="_blank">View Link</a></td>
+                            <td class="actions">
+                                <a href="grade_assignment.html" class="btn btn-primary">Grade</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Nov 02, 2024</td>
+                            <td><a href="#" target="_blank">View Link</a></td>
+                            <td class="actions">
+                                <a href="grade_assignment.html" class="btn btn-primary">Grade</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
